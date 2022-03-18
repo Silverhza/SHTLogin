@@ -24,10 +24,24 @@ class ViewController: UIViewController, WKUIDelegate {
 //        web1.uiDelegate = self
 //        view = web1
 //    }
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        log()
+    }
+    
+    func log(){
+        if (!web1.isLoading) {
+        let jsString = "document.getElementById('loginBtn').click()"
+        web1.evaluateJavaScript(jsString, completionHandler: { result,error in
+             print(result);})
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let myURL = URL(string:"https://controller.shanghaitech.edu.cn:8445/PortalServer/customize/1478262836414/phone/auth.jsp")
         let myRequest = URLRequest(url: myURL!)
         web1.load(myRequest)
-    }}
+        //Thread.sleep(forTimeInterval: 15)
+    }
+}
