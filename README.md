@@ -1,4 +1,4 @@
 # SHTLogin
 ShanghaiTech WIFI登录器
 
-![image](./image/image.PNG)
+<img src="./image/image.PNG" width="350px">
