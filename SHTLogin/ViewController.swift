@@ -21,6 +21,10 @@ class ViewController: UIViewController, WKUIDelegate {
     
     @IBOutlet weak var web1: WKWebView!
     
+    @IBAction func reload(_ sender: Any) {
+        label.text=""
+        loadweb()
+    }
     @IBAction func connect(_ sender: Any) {
         log()
     }
@@ -34,7 +38,6 @@ class ViewController: UIViewController, WKUIDelegate {
             //print("网络已连接")
             // Network Available
         }
-        loadweb()
     }
     
     @IBAction func save(_ sender: Any) {
